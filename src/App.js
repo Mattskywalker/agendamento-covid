@@ -1,8 +1,6 @@
 
 import './App.css';
-import Subscribe from './pages/Subscribe';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './pages/Home/Home';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import routes from './routes'
 
