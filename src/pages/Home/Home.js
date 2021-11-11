@@ -1,6 +1,8 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import BackgroundImg from '../../images/covid-background.jpeg'
+import TextField from '@material-ui/core/TextField';
+
 
 const UseStyles = makeStyles((theme) => ({
   home: {
@@ -9,7 +11,8 @@ const UseStyles = makeStyles((theme) => ({
     height: '100vh',
     verticalAlign: 'center',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    flexDirection: 'column'    
     
   },
   container: {
@@ -19,14 +22,30 @@ const UseStyles = makeStyles((theme) => ({
     backgroundImage: `url(${BackgroundImg})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
-  },
-  topBox: {
-    backgroundColor: 'aqua',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
     
-    width: '100%',
-    height: '10%',
-    position:'relative'
   },
+  
+  toolbar: {
+    height: '8%',
+    width: '100%',
+    backgroundColor: '#000',
+    opacity: '0.2'
+  },
+
+  loginBox: {
+    width: '30%',
+    height: '50%',
+    backgroundColor: 'white',
+    borderRadius: '10px',
+    marginTop: '9%',
+    display: 'flex',
+    flexDirection: 'column',
+    
+    WebkitBoxShadow: '2px 8px 8px 0.5px',
+  }
 }))
 
 export default function Home() {
@@ -35,10 +54,18 @@ export default function Home() {
   
   return (
     <div className={classes.home}>
+      
       <div className={classes.container} alt="">
-        <h1>
-          Mateusssssssss
-        </h1>
+        <div className={classes.toolbar}></div>
+
+        <div className={classes.loginBox}>
+          <Typography style={{marginTop: '3%' ,color: 'black'}} variant="h3">Login</Typography>
+          <form className={classes.root} noValidate autoComplete="off">
+            <TextField style={{marginTop: '3%'}} id="outlined-basic" label="Login" variant="filled" />
+            <TextField style={{marginTop: '3%'}} id="outlined-basic" label="Senha" variant="filled" />
+          </form>
+        </div> 
+        
       </div>
     </div>
   );
