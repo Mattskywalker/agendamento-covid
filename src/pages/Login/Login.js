@@ -2,8 +2,8 @@ import { Button, makeStyles, Typography, Link } from '@material-ui/core';
 import React from 'react';
 import BackgroundImg from '../../images/covid-background.jpeg'
 import TextField from '@material-ui/core/TextField';
-import Toolbar from '../Components/Toolbar';
-import PasswordField from '../Components/PasswordField/PasswordField';
+import Toolbar from '../../Components/Toolbar';
+import PasswordField from '../../Components/PasswordField';
 
 
 
