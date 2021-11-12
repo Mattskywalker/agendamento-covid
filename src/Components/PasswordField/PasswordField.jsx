@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
  
 }));
 
-export default function PasswordField() {
+export default function PasswordField({placeholder}) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     amount: '',
@@ -38,7 +38,7 @@ export default function PasswordField() {
   return (
     <div style={{marginTop: '3%', display: 'grid'}}>
         <FormControl className={clsx(classes.margin, classes.textField)} variant="filled">
-            <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
+            <InputLabel htmlFor="filled-adornment-password">{placeholder}</InputLabel>
             <FilledInput
             id="filled-adornment-password"
             type={values.showPassword ? 'text' : 'password'}
@@ -47,7 +47,6 @@ export default function PasswordField() {
             endAdornment={
                 <InputAdornment position="end">
                 <IconButton
-                    aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
                     edge="end"
