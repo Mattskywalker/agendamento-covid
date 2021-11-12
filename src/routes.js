@@ -21,7 +21,7 @@ const routes = [
         component: SchedulingPage,
     },
     {
-        path: '/inscrever-se',
+        path: '/cadastro',
         exact: true,
         component: Subscribe,
     }
