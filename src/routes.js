@@ -1,6 +1,7 @@
 import Login from './pages/Login'
 import Home from './pages/Home'
 import SchedulingPage from './pages/SchedulingPage';
+import Subscribe from './pages/Subscribe';
 
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
         path: '/agendamento',
         exact: true,
         component: SchedulingPage,
+    },
+    {
+        path: '/inscrever-se',
+        exact: true,
+        component: Subscribe,
     }
 ]
 
