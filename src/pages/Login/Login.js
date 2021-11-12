@@ -72,7 +72,7 @@ export default function Login() {
           <Typography style={{marginTop: '3%' ,color: 'black'}} variant="h3">Login</Typography>
           <form className={classes.form} noValidate autoComplete="off">
             <TextField className={classes.textfield} style={{marginTop: '3%'}} id="outlined-basic" label="Login" variant="filled" />
-            <PasswordField className={classes.passwordField} style={{marginTop: '3%'}}/>
+            <PasswordField placeholder='Senha' className={classes.passwordField} style={{marginTop: '3%'}}/>
             
             <Button style={{marginTop: '6%'}} type="submit" variant="contained">
               <Typography variant="">Entrar</Typography>
