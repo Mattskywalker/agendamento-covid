@@ -1,7 +1,7 @@
 import { Button, FilledInput, FormControl, IconButton, InputAdornment, InputLabel, makeStyles, TextField, Typography } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import React from 'react'
+import React  from 'react'
 import clsx from 'clsx';
 
 
@@ -35,7 +35,8 @@ export default function SubscribeForm() {
       });
 
     function passwordMatch(password, confirmPassword){
-        if(password === confirmPassword){
+        if(values.password === values.confirmPassword){
+          console.log("As senhas batem!")
           return true;
         }
         return false;
