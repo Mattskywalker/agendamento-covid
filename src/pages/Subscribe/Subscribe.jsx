@@ -1,9 +1,8 @@
-import { Button, makeStyles, Typography, Checkbox } from '@material-ui/core';
-import React, { useState } from 'react';
+import { makeStyles, Typography} from '@material-ui/core';
 import BackgroundImg from '../../images/covid-background.jpeg'
-import TextField from '@material-ui/core/TextField';
 import Toolbar from '../../Components/Toolbar';
-import PasswordField from '../../Components/PasswordField';
+import SubscribeForm from './Components';
+
 
 
 
@@ -33,7 +32,7 @@ const UseStyles = makeStyles((theme) => ({
 
   loginBox: {
     width: '500px',
-    height: '415px',
+    height: '450px',
     backgroundColor: 'white',
     borderRadius: '10px',
     marginTop: '18vh',
@@ -42,9 +41,7 @@ const UseStyles = makeStyles((theme) => ({
     
     WebkitBoxShadow: '2px 4px 8px 0.5px',
   },
-  textfield: {
-    WebkitBoxShadow: '-webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.32)',
-  },
+  
   form: {
     display: 'flex',
     flexDirection: 'column',
@@ -52,9 +49,7 @@ const UseStyles = makeStyles((theme) => ({
     marginRight: '10%',
 
   },
-  passwordField: {
-    marginTop: '3%',
-  }
+  
 
 }))
 
@@ -62,9 +57,11 @@ export default function Subscribe() {
   const classes = UseStyles();
 
   //cpf, idade, profissão, possui comorbidade ( boolean ) , comorbidade ( descrição informando qual possui, data e hora do agendamento )
-
-  const [valueCheck, setCheck] = useState(false);
   
+
+
+  
+
   return (
     <div className={classes.home}>
       
@@ -72,18 +69,8 @@ export default function Subscribe() {
         <Toolbar></Toolbar>
         <div className={classes.loginBox}>
           <Typography style={{marginTop: '3%' ,color: 'black'}} variant="h3">Cadastro</Typography>
+          <SubscribeForm></SubscribeForm>
           
-          <form className={classes.form} noValidate autoComplete="off">
-            <TextField type='text' className={classes.textfield} style={{marginTop: '3%'}} id="outlined-basic" label="Nome" variant="filled" />
-            <TextField type='text' className={classes.textfield} style={{marginTop: '3%'}} id="outlined-basic" label="Usuario" variant="filled" />
-            <PasswordField placeholder='Senha' className={classes.textfield} style={{marginTop: '3%'}} />
-            <PasswordField placeholder='Repita sua senha' className={classes.textfield} style={{marginTop: '3%'}} />
-            
-            <Button style={{marginTop: '4%'}} type="submit" variant="contained">
-              <Typography variant="">Cadastrar</Typography>
-            </Button>
-            
-          </form>
         </div> 
         
       </div>
