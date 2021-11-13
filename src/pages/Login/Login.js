@@ -1,9 +1,8 @@
-import { Button, makeStyles, Typography, Link } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import BackgroundImg from '../../images/covid-background.jpeg'
-import TextField from '@material-ui/core/TextField';
 import Toolbar from '../../Components/Toolbar';
-import PasswordField from '../../Components/PasswordField';
+import LoginForm from './components';
 
 
 
@@ -70,23 +69,7 @@ export default function Login() {
         <Toolbar></Toolbar>
         <div className={classes.loginBox}>
           <Typography style={{marginTop: '3%' ,color: 'black'}} variant="h3">Login</Typography>
-          <form className={classes.form} noValidate autoComplete="off">
-            <TextField className={classes.textfield} style={{marginTop: '3%'}} id="outlined-basic" label="Login" variant="filled" />
-            <PasswordField placeholder='Senha' className={classes.passwordField} style={{marginTop: '3%'}}/>
-            
-            <Button style={{marginTop: '6%'}} type="submit" variant="contained">
-              <Typography variant="">Entrar</Typography>
-            </Button>
-            <Link
-              style={{marginTop: '6%'}}
-              component="button"
-              variant="body2"
-              
-            >
-              Cadastre-se
-            </Link>
-            
-          </form>
+          <LoginForm></LoginForm>
         </div> 
         
       </div>
