@@ -22,9 +22,11 @@ export default function PasswordField({placeholder}) {
     weightRange: '',
     showPassword: false,
   });
+  
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
+    
   };
 
   const handleClickShowPassword = () => {
