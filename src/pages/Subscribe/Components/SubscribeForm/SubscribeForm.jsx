@@ -26,13 +26,21 @@ export default function SubscribeForm() {
 
     const [values, setValues] = React.useState({
         amount: '',
-        password: '',
-        confirmPassword: '',
         weight: '',
         weightRange: '',
         showPassword: false,
         showConfirmPassword: false 
       });
+
+    const [formState, setFormState] = React.useState({
+      isValid: false,
+      formData: {
+        name: '',
+        login: '',
+        password: ''  ,
+        confirmPassword: '',
+      }
+    })
 
     function passwordMatch(password, confirmPassword){
         if(values.password === values.confirmPassword){
@@ -43,7 +51,14 @@ export default function SubscribeForm() {
       }
 
       const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
+        
+        setFormState(formState => ({
+          ...formState,
+          formData: {
+            ...formState.formData,
+            [prop]: event.target.value,
+          }
+        }));
         
       };
     
@@ -65,14 +80,14 @@ export default function SubscribeForm() {
     return (
         <div>
             <form className={classes.form} noValidate autoComplete="off">
-                <TextField type='text' className={classes.textfield} style={{marginTop: '3%'}} id="outlined-basic" label="Nome" variant="filled" />
-                <TextField type='text' className={classes.textfield} style={{marginTop: '3%'}} id="outlined-basic" label="Usuario" variant="filled" />
+                <TextField onChange={handleChange('name')} type='text' className={classes.textfield} style={{marginTop: '3%'}} id="outlined-basic" label="Nome" variant="filled" />
+                <TextField onChange={handleChange('login')} type='text' className={classes.textfield} style={{marginTop: '3%'}} id="outlined-basic" label="Usuario" variant="filled" />
                 <FormControl style={{marginTop: '3%'}} className={clsx(classes.margin, classes.textField)} variant="filled">
                     <InputLabel htmlFor="filled-adornment-password">Sua senha</InputLabel>
                     <FilledInput
                     id="filled-adornment-password"
                     type={values.showPassword ? 'text' : 'password'}
-                    value={values.password}
+                    value={formState.formData.password || ''}
                     onChange={handleChange('password')}
                     endAdornment={
                         <InputAdornment position="end">
@@ -92,7 +107,7 @@ export default function SubscribeForm() {
                     <FilledInput
                     id="filled-adornment-password"
                     type={values.showConfirmPassword ? 'text' : 'password'}
-                    value={values.confirmPassword}
+                    value={formState.formData.confirmPassword}
                     onChange={handleChange('confirmPassword')}
                     endAdornment={
                         <InputAdornment position="end">
@@ -111,7 +126,7 @@ export default function SubscribeForm() {
                 <Button 
                 style={{marginTop: '4%'}}
                 variant="contained"
-                onClick={() => {passwordMatch()}}
+                onClick={() => {console.log(formState.formData)}}
                 >
                 <Typography variant="">Cadastrar</Typography>
                 </Button>
